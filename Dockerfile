@@ -5,7 +5,7 @@ ENV GEOSERVER_VERSION 2.12.x
 ENV GEOSERVER_DATA_DIR /geoserver_data
 RUN cd /tmp && \
     wget http://build.geonode.org/geoserver/latest/geoserver-${GEOSERVER_VERSION}.war \
-    -o geoserver.war
+    -O geoserver.war
 RUN mv /tmp/geoserver.war /var/lib/jetty/webapps
 RUN mkdir -p $GEOSERVER_DATA_DIR
 RUN chown -R jetty:jetty $GEOSERVER_DATA_DIR
