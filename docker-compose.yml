@@ -4,7 +4,7 @@ services:
   geoserver:
       image: cartoview/geoserver_docker:jetty
       volumes:
-        - ./webapps:/geoserver_data
+        - ./geoserver/data:/geoserver_data
       ports:
         - "8080:8080"
       restart: unless-stopped
