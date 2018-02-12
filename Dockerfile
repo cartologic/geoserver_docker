@@ -1,4 +1,5 @@
 FROM jetty:9.4.7-jre8-alpine
+LABEL "MAINTAINER"="Cartologic Development Team"
 USER root
 ENV GEOSERVER_VERSION 2.12.x
 ENV GEOSERVER_DATA_DIR /geoserver_data
