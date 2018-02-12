@@ -4,7 +4,7 @@ services:
   geoserver:
       image: cartoview/geoserver_docker:tomcat
       volumes:
-        - ./webapps:/usr/local/tomcat/webapps
+        - ./geoserver/data:/geoserver_data
       ports:
         - "8080:8080"
       restart: unless-stopped
