@@ -2,7 +2,7 @@ version: '3'
 
 services:
   geoserver:
-      image: cartoview/tomcat_docker:latest
+      image: cartoview/geoserver_docker:tomcat
       volumes:
         - ./webapps:/usr/local/tomcat/webapps
       ports:
