@@ -8,6 +8,5 @@ RUN cd /tmp && \
     -O geoserver.war
 RUN mv /tmp/geoserver.war /var/lib/jetty/webapps
 RUN mkdir -p $GEOSERVER_DATA_DIR
-RUN chown -R jetty:jetty $GEOSERVER_DATA_DIR
 RUN chmod -R 777 $GEOSERVER_DATA_DIR
 VOLUME ${GEOSERVER_DATA_DIR}
