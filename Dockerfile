@@ -1,4 +1,4 @@
-FROM tomcat:9.0.4-jre8-alpine
+FROM tomcat:9.0.4-jre8
 LABEL "MAINTAINER"="Cartologic Development Team"
 ENV JAVA_HOME /usr/lib/jvm/default-java
 ENV GEOSERVER_VERSION 2.12.x
