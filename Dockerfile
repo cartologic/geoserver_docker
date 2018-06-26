@@ -26,6 +26,6 @@ RUN mv /tmp/geoserver.war /usr/local/tomcat/webapps
 RUN unzip -q /usr/local/tomcat/webapps/geoserver.war -d /usr/local/tomcat/webapps/geoserver
 RUN cp /tmp/geoserver-2.12-SNAPSHOT-charts-plugin/* \
     /usr/local/tomcat/webapps/geoserver/WEB-INF/lib/ \
-    rm -r /tmp/*
+    && rm -r /tmp/*
 RUN mkdir -p $GEOSERVER_DATA_DIR
 VOLUME ${GEOSERVER_DATA_DIR}
