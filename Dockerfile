@@ -18,14 +18,12 @@ RUN apt-get autoremove --purge -y openjdk-8-jre-headless && \
 RUN cd /tmp && \
     wget http://build.cartoview.net/geoserver.war \
     -O geoserver.war
-RUN cd /tmp && \
-    wget https://build.geoserver.org/geoserver/2.12.x/ext-latest/geoserver-2.12-SNAPSHOT-charts-plugin.zip \
-    && unzip geoserver-2.12-SNAPSHOT-charts-plugin.zip
-    
 RUN mv /tmp/geoserver.war /usr/local/tomcat/webapps
 RUN unzip -q /usr/local/tomcat/webapps/geoserver.war -d /usr/local/tomcat/webapps/geoserver
-RUN cp /tmp/geoserver-2.12-SNAPSHOT-charts-plugin/* \
-    /usr/local/tomcat/webapps/geoserver/WEB-INF/lib/ \
-    && rm -r /tmp/*
+RUN cd /tmp && \
+    wget https://build.geoserver.org/geoserver/2.12.x/ext-latest/geoserver-2.12-SNAPSHOT-charts-plugin.zip \
+    && unzip /tmp/geoserver-2.12-SNAPSHOT-charts-plugin.zip -d /tmp/charts_plugin \
+    && cp /tmp/charts_plugin/* \
+    /usr/local/tomcat/webapps/geoserver/WEB-INF/lib/ && rm -r /tmp/*
 RUN mkdir -p $GEOSERVER_DATA_DIR
 VOLUME ${GEOSERVER_DATA_DIR}
