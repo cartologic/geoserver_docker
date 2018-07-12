@@ -16,7 +16,7 @@ RUN apt-get autoremove --purge -y openjdk-8-jre-headless && \
     ln -s --force /usr/lib/jvm/java-8-oracle /usr/lib/jvm/default-java
 
 RUN cd /tmp && \
-    wget http://build.cartoview.net/geoserver.war \
+    wget http://build.geonode.org/geoserver/latest/geoserver-2.10.x.war \
     -O geoserver.war
 RUN mv /tmp/geoserver.war /usr/local/tomcat/webapps
 RUN unzip -q /usr/local/tomcat/webapps/geoserver.war -d /usr/local/tomcat/webapps/geoserver
