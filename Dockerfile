@@ -34,7 +34,7 @@ ENV JAVA_DEBIAN_VERSION=
 # Set JAVA_HOME to /usr/lib/jvm/default-java and link it to OpenJDK installation
 RUN ln -s /usr/lib/jvm/java-8-openjdk-amd64 /usr/lib/jvm/default-java
 ENV JAVA_HOME /usr/lib/jvm/default-java
-ARG ORACLE_JDK=true
+ARG ORACLE_JDK=false
 ARG TOMCAT_EXTRAS=true
 ARG COMMUNITY_MODULES=true
 ARG JAI_IMAGEIO=true
