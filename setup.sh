@@ -158,6 +158,9 @@ if [ "$JAI_IMAGEIO" = true ]; then \
     rm /tmp/jai_imageio-1_1-lib-linux-amd64.tar.gz && \
     rm -r /tmp/jai_imageio-1_1; \
 fi
+rm -rf $CATALINA_HOME/webapps/geoserver/WEB-INF/lib/jai_core-*jar && \
+rm -rf $CATALINA_HOME/webapps/geoserver/WEB-INF/lib/jai_imageio-*.jar && \
+rm -rf $CATALINA_HOME/webapps/geoserver/WEB-INF/lib/jai_codec-*.jar
 WORKDIR $CATALINA_HOME
 
 # A little logic that will fetch the geoserver war zip file if it
