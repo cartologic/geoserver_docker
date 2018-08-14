@@ -37,10 +37,14 @@ ENV JAVA_HOME /usr/lib/jvm/default-java
 ARG ORACLE_JDK=true
 ARG TOMCAT_EXTRAS=true
 ARG COMMUNITY_MODULES=true
+ARG JAI_IMAGEIO=true
 WORKDIR /tmp/
 ADD resources /tmp/resources
+ADD create_dirs.sh /
 ADD setup.sh /
 RUN chmod +x /*.sh
+RUN /create_dirs.sh
+VOLUME ${GEOSERVER_DATA_DIR}
 RUN /setup.sh
 ADD controlflow.properties $GEOSERVER_DATA_DIR
 ADD sqljdbc4-4.0.jar $CATALINA_HOME/webapps/geoserver/WEB-INF/lib/

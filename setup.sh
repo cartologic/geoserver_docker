@@ -1,22 +1,6 @@
 #!/usr/bin/env bash
 # Download geoserver extensions and other resources
 
-if [ ! -d ${GEOSERVER_DATA_DIR} ];
-then
-    echo "Creating geoserver data directory"
-    mkdir -p ${GEOSERVER_DATA_DIR}
-else
-    echo "Geoserver data directory already exist"
-fi
-
-if [ ! -d ${FOOTPRINTS_DATA_DIR} ];
-then
-    echo "Creating geoserver footprints directory"
-    mkdir -p ${FOOTPRINTS_DATA_DIR}
-else
-    echo "Geoserver  footprints directory already exist"
-fi
-
 pushd /tmp/resources
 #Java
 #Webupd8
@@ -160,6 +144,20 @@ if ls /var/cache/oracle-jdk8-installer/*jdk-*-linux-x64.tar.gz > /dev/null 2>&1 
     rm /tmp/jai_imageio-1_1-lib-linux-amd64.tar.gz && \
     rm -r /tmp/jai_imageio-1_1
 
+if [ "$JAI_IMAGEIO" = true ]; then \
+    wget http://download.java.net/media/jai/builds/release/1_1_3/jai-1_1_3-lib-linux-amd64.tar.gz && \
+    wget http://download.java.net/media/jai-imageio/builds/release/1.1/jai_imageio-1_1-lib-linux-amd64.tar.gz && \
+    gunzip -c jai-1_1_3-lib-linux-amd64.tar.gz | tar xf - && \
+    gunzip -c jai_imageio-1_1-lib-linux-amd64.tar.gz | tar xf - && \
+    mv /tmp/jai-1_1_3/lib/*.jar $JAVA_HOME/jre/lib/ext/ && \
+    mv /tmp/jai-1_1_3/lib/*.so $JAVA_HOME/jre/lib/amd64/ && \
+    mv /tmp/jai_imageio-1_1/lib/*.jar $JAVA_HOME/jre/lib/ext/ && \
+    mv /tmp/jai_imageio-1_1/lib/*.so $JAVA_HOME/jre/lib/amd64/ && \
+    rm /tmp/jai-1_1_3-lib-linux-amd64.tar.gz && \
+    rm -r /tmp/jai-1_1_3 && \
+    rm /tmp/jai_imageio-1_1-lib-linux-amd64.tar.gz && \
+    rm -r /tmp/jai_imageio-1_1; \
+fi
 WORKDIR $CATALINA_HOME
 
 # A little logic that will fetch the geoserver war zip file if it
