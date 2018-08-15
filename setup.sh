@@ -144,20 +144,16 @@ if ls /var/cache/oracle-jdk8-installer/*jdk-*-linux-x64.tar.gz > /dev/null 2>&1 
     rm /tmp/jai_imageio-1_1-lib-linux-amd64.tar.gz && \
     rm -r /tmp/jai_imageio-1_1
 
-if [ "$JAI_IMAGEIO" = true ]; then \
-    wget http://download.java.net/media/jai/builds/release/1_1_3/jai-1_1_3-lib-linux-amd64.tar.gz && \
-    wget http://download.java.net/media/jai-imageio/builds/release/1.1/jai_imageio-1_1-lib-linux-amd64.tar.gz && \
-    gunzip -c jai-1_1_3-lib-linux-amd64.tar.gz | tar xf - && \
-    gunzip -c jai_imageio-1_1-lib-linux-amd64.tar.gz | tar xf - && \
-    mv /tmp/jai-1_1_3/lib/*.jar $JAVA_HOME/jre/lib/ext/ && \
-    mv /tmp/jai-1_1_3/lib/*.so $JAVA_HOME/jre/lib/amd64/ && \
-    mv /tmp/jai_imageio-1_1/lib/*.jar $JAVA_HOME/jre/lib/ext/ && \
-    mv /tmp/jai_imageio-1_1/lib/*.so $JAVA_HOME/jre/lib/amd64/ && \
-    rm /tmp/jai-1_1_3-lib-linux-amd64.tar.gz && \
-    rm -r /tmp/jai-1_1_3 && \
-    rm /tmp/jai_imageio-1_1-lib-linux-amd64.tar.gz && \
-    rm -r /tmp/jai_imageio-1_1; \
-fi
+cd $JAVA_HOME && \
+wget http://data.boundlessgeo.com/suite/jai/jai-1_1_3-lib-linux-amd64-jdk.bin && \
+echo "yes" | sh jai-1_1_3-lib-linux-amd64-jdk.bin && \
+rm jai-1_1_3-lib-linux-amd64-jdk.bin
+
+cd $JAVA_HOME && \
+export _POSIX2_VERSION=199209 &&\
+wget http://data.opengeo.org/suite/jai/jai_imageio-1_1-lib-linux-amd64-jdk.bin && \
+echo "yes" | sh jai_imageio-1_1-lib-linux-amd64-jdk.bin && \
+rm jai_imageio-1_1-lib-linux-amd64-jdk.bin
 
 WORKDIR $CATALINA_HOME
 
