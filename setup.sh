@@ -32,20 +32,20 @@ pushd ${work_dir}/plugins
 #Extensions
 
 # Vector tiles
-wget -c https://build.geoserver.org/geoserver/2.13.x/ext-latest/${GS_VERSION:0:4}-SNAPSHOT-vectortiles-plugin.zip -O geoserver-${GS_VERSION}-vectortiles-plugin.zip
+wget -c https://build.geoserver.org/geoserver/${GS_VERSION:0:5}x/ext-latest/${GS_VERSION:0:4}-SNAPSHOT-vectortiles-plugin.zip -O geoserver-${GS_VERSION}-vectortiles-plugin.zip
 # CSS styling
-wget -c https://build.geoserver.org/geoserver/2.13.x/ext-latest/${GS_VERSION:0:4}-SNAPSHOT-css-plugin.zip -O geoserver-${GS_VERSION}-css-plugin.zip
+wget -c https://build.geoserver.org/geoserver/${GS_VERSION:0:5}x/ext-latest/${GS_VERSION:0:4}-SNAPSHOT-css-plugin.zip -O geoserver-${GS_VERSION}-css-plugin.zip
 # Charts Plugin
-wget -c https://build.geoserver.org/geoserver/2.13.x/ext-latest/${GS_VERSION:0:4}-SNAPSHOT-charts-plugin.zip -O geoserver-${GS_VERSION}-charts-plugin.zip
+wget -c https://build.geoserver.org/geoserver/${GS_VERSION:0:5}x/ext-latest/${GS_VERSION:0:4}-SNAPSHOT-charts-plugin.zip -O geoserver-${GS_VERSION}-charts-plugin.zip
 
 #libjpeg-turbo
-wget -c https://build.geoserver.org/geoserver/2.13.x/ext-latest/${GS_VERSION:0:4}-SNAPSHOT-libjpeg-turbo-plugin.zip -O geoserver-${GS_VERSION}-libjpeg-turbo-plugin.zip
+wget -c https://build.geoserver.org/geoserver/${GS_VERSION:0:5}x/ext-latest/${GS_VERSION:0:4}-SNAPSHOT-libjpeg-turbo-plugin.zip -O geoserver-${GS_VERSION}-libjpeg-turbo-plugin.zip
 #Control flow
-wget -c https://build.geoserver.org/geoserver/2.13.x/ext-latest/${GS_VERSION:0:4}-SNAPSHOT-control-flow-plugin.zip -O geoserver-${GS_VERSION}-control-flow-plugin.zip
+wget -c https://build.geoserver.org/geoserver/${GS_VERSION:0:5}x/ext-latest/${GS_VERSION:0:4}-SNAPSHOT-control-flow-plugin.zip -O geoserver-${GS_VERSION}-control-flow-plugin.zip
 #Image pyramid
-wget -c https://build.geoserver.org/geoserver/2.13.x/ext-latest/${GS_VERSION:0:4}-SNAPSHOT-printing-plugin.zip -O geoserver-${GS_VERSION}-pyramid-plugin.zip
+wget -c https://build.geoserver.org/geoserver/${GS_VERSION:0:5}x/ext-latest/${GS_VERSION:0:4}-SNAPSHOT-printing-plugin.zip -O geoserver-${GS_VERSION}-pyramid-plugin.zip
 #GDAL
-wget -c https://build.geoserver.org/geoserver/2.13.x/ext-latest/${GS_VERSION:0:4}-SNAPSHOT-gdal-plugin.zip -O geoserver-${GS_VERSION}-gdal-plugin.zip
+wget -c https://build.geoserver.org/geoserver/${GS_VERSION:0:5}x/ext-latest/${GS_VERSION:0:4}-SNAPSHOT-gdal-plugin.zip -O geoserver-${GS_VERSION}-gdal-plugin.zip
 
 if [ ! -d gdal ];
 then
