@@ -32,20 +32,20 @@ pushd ${work_dir}/plugins
 #Extensions
 
 # Vector tiles
-wget -c https://build.geoserver.org/geoserver/${GS_VERSION:0:5}x/ext-latest/${GS_VERSION:0:4}-SNAPSHOT-vectortiles-plugin.zip -O geoserver-${GS_VERSION}-vectortiles-plugin.zip
+wget -c https://build.geoserver.org/geoserver/${GS_VERSION:0:5}x/ext-latest/geoserver-${GS_VERSION:0:4}-SNAPSHOT-vectortiles-plugin.zip -O geoserver-${GS_VERSION}-vectortiles-plugin.zip
 # CSS styling
-wget -c https://build.geoserver.org/geoserver/${GS_VERSION:0:5}x/ext-latest/${GS_VERSION:0:4}-SNAPSHOT-css-plugin.zip -O geoserver-${GS_VERSION}-css-plugin.zip
+wget -c https://build.geoserver.org/geoserver/${GS_VERSION:0:5}x/ext-latest/geoserver-${GS_VERSION:0:4}-SNAPSHOT-css-plugin.zip -O geoserver-${GS_VERSION}-css-plugin.zip
 # Charts Plugin
-wget -c https://build.geoserver.org/geoserver/${GS_VERSION:0:5}x/ext-latest/${GS_VERSION:0:4}-SNAPSHOT-charts-plugin.zip -O geoserver-${GS_VERSION}-charts-plugin.zip
+wget -c https://build.geoserver.org/geoserver/${GS_VERSION:0:5}x/ext-latest/geoserver-${GS_VERSION:0:4}-SNAPSHOT-charts-plugin.zip -O geoserver-${GS_VERSION}-charts-plugin.zip
 
 #libjpeg-turbo
-wget -c https://build.geoserver.org/geoserver/${GS_VERSION:0:5}x/ext-latest/${GS_VERSION:0:4}-SNAPSHOT-libjpeg-turbo-plugin.zip -O geoserver-${GS_VERSION}-libjpeg-turbo-plugin.zip
+wget -c https://build.geoserver.org/geoserver/${GS_VERSION:0:5}x/ext-latest/geoserver-${GS_VERSION:0:4}-SNAPSHOT-libjpeg-turbo-plugin.zip -O geoserver-${GS_VERSION}-libjpeg-turbo-plugin.zip
 #Control flow
-wget -c https://build.geoserver.org/geoserver/${GS_VERSION:0:5}x/ext-latest/${GS_VERSION:0:4}-SNAPSHOT-control-flow-plugin.zip -O geoserver-${GS_VERSION}-control-flow-plugin.zip
+wget -c https://build.geoserver.org/geoserver/${GS_VERSION:0:5}x/ext-latest/geoserver-${GS_VERSION:0:4}-SNAPSHOT-control-flow-plugin.zip -O geoserver-${GS_VERSION}-control-flow-plugin.zip
 #Image pyramid
-wget -c https://build.geoserver.org/geoserver/${GS_VERSION:0:5}x/ext-latest/${GS_VERSION:0:4}-SNAPSHOT-printing-plugin.zip -O geoserver-${GS_VERSION}-pyramid-plugin.zip
+wget -c https://build.geoserver.org/geoserver/${GS_VERSION:0:5}x/ext-latest/geoserver-${GS_VERSION:0:4}-SNAPSHOT-printing-plugin.zip -O geoserver-${GS_VERSION}-pyramid-plugin.zip
 #GDAL
-wget -c https://build.geoserver.org/geoserver/${GS_VERSION:0:5}x/ext-latest/${GS_VERSION:0:4}-SNAPSHOT-gdal-plugin.zip -O geoserver-${GS_VERSION}-gdal-plugin.zip
+wget -c https://build.geoserver.org/geoserver/${GS_VERSION:0:5}x/ext-latest/geoserver-${GS_VERSION:0:4}-SNAPSHOT-gdal-plugin.zip -O geoserver-${GS_VERSION}-gdal-plugin.zip
 
 if [ ! -d gdal ];
 then
@@ -126,25 +126,6 @@ if ls /var/cache/oracle-jdk8-installer/*jdk-*-linux-x64.tar.gz > /dev/null 2>&1 
          mv /tmp/jce_policy/*.jar $JAVA_HOME/jre/lib/security/; \
        fi; \
     fi;
-
- if [ ! -f /tmp/resources/jai-1_1_3-lib-linux-amd64.tar.gz ]; then \
-    wget http://download.java.net/media/jai/builds/release/1_1_3/jai-1_1_3-lib-linux-amd64.tar.gz -P /tmp/resources;\
-    fi; \
-    if [ ! -f /tmp/resources/jai_imageio-1_1-lib-linux-amd64.tar.gz ]; then \
-    wget http://download.java.net/media/jai-imageio/builds/release/1.1/jai_imageio-1_1-lib-linux-amd64.tar.gz -P /tmp/resources;\
-    fi; \
-    mv resources/jai-1_1_3-lib-linux-amd64.tar.gz ./ && \
-    mv resources/jai_imageio-1_1-lib-linux-amd64.tar.gz ./ && \
-    gunzip -c jai-1_1_3-lib-linux-amd64.tar.gz | tar xf - && \
-    gunzip -c jai_imageio-1_1-lib-linux-amd64.tar.gz | tar xf - && \
-    mv /tmp/jai-1_1_3/lib/*.jar $JAVA_HOME/jre/lib/ext/ && \
-    mv /tmp/jai-1_1_3/lib/*.so $JAVA_HOME/jre/lib/amd64/ && \
-    mv /tmp/jai_imageio-1_1/lib/*.jar $JAVA_HOME/jre/lib/ext/ && \
-    mv /tmp/jai_imageio-1_1/lib/*.so $JAVA_HOME/jre/lib/amd64/ && \
-    rm /tmp/jai-1_1_3-lib-linux-amd64.tar.gz && \
-    rm -r /tmp/jai-1_1_3 && \
-    rm /tmp/jai_imageio-1_1-lib-linux-amd64.tar.gz && \
-    rm -r /tmp/jai_imageio-1_1
 
 cd $JAVA_HOME && \
 wget http://data.boundlessgeo.com/suite/jai/jai-1_1_3-lib-linux-amd64-jdk.bin && \
