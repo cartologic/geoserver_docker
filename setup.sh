@@ -35,6 +35,8 @@ pushd ${work_dir}/plugins
 wget -c https://build.geoserver.org/geoserver/2.13.x/ext-latest/${GS_VERSION:0:4}-SNAPSHOT-vectortiles-plugin.zip -O geoserver-${GS_VERSION}-vectortiles-plugin.zip
 # CSS styling
 wget -c https://build.geoserver.org/geoserver/2.13.x/ext-latest/${GS_VERSION:0:4}-SNAPSHOT-css-plugin.zip -O geoserver-${GS_VERSION}-css-plugin.zip
+# Charts Plugin
+wget -c https://build.geoserver.org/geoserver/2.13.x/ext-latest/${GS_VERSION:0:4}-SNAPSHOT-charts-plugin.zip -O geoserver-${GS_VERSION}-charts-plugin.zip
 
 #libjpeg-turbo
 wget -c https://build.geoserver.org/geoserver/2.13.x/ext-latest/${GS_VERSION:0:4}-SNAPSHOT-libjpeg-turbo-plugin.zip -O geoserver-${GS_VERSION}-libjpeg-turbo-plugin.zip
