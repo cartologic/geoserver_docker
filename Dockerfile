@@ -12,11 +12,13 @@ RUN apt-get install -y  fonts-cantarell lmodern ttf-aenigma ttf-georgewilliams t
     build-essential libapr1-dev libssl-dev default-jdk
 #-------------Application Specific Stuff ----------------------------------------------------
 
-ARG GS_VERSION=2.12.0
-ARG GEONODE_GS_VERSION=2.12.x
+ARG GS_VERSION=2.14.0
+ARG GEONODE_GS_VERSION=2.14.x
 ENV ENABLE_JSONP true
 ENV MAX_FILTER_RULES 20
 ENV OPTIMIZE_LINE_WIDTH false
+ENV MARLIN_TAG=0_9_2
+ENV MARLIN_VERSION=0.9.2
 ENV GEOWEBCACHE_CACHE_DIR /geoserver_data/gwc
 ENV GEOSERVER_OPTS "-Djava.awt.headless=true -server -Xms2G -Xmx4G -Xrs -XX:PerfDataSamplingInterval=500 \
     -Dorg.geotools.referencing.forceXY=true -XX:SoftRefLRUPolicyMSPerMB=36000 -XX:+UseParallelGC -XX:NewRatio=2 \
