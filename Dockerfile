@@ -1,4 +1,4 @@
-FROM tomcat:8.5.32
+FROM tomcat:9.0.14-jre8-slim
 LABEL "MAINTAINER"="Cartologic Development Team"
 ENV JAVA_HOME /usr/lib/jvm/default-java
 ENV GEOSERVER_DATA_DIR /geoserver_data
