@@ -44,6 +44,7 @@ WORKDIR /tmp/
 ADD resources /tmp/resources
 ADD create_dirs.sh /
 ADD setup.sh /
+RUN apt-get update && apt-get install wget --no-install-recommends -y
 RUN chmod +x /*.sh
 RUN /create_dirs.sh
 VOLUME ${GEOSERVER_DATA_DIR}
