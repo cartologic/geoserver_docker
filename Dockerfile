@@ -12,7 +12,7 @@ RUN apt-get install -y  fonts-cantarell lmodern ttf-aenigma ttf-georgewilliams t
     build-essential libapr1-dev libssl-dev default-jdk
 #-------------Application Specific Stuff ----------------------------------------------------
 
-ARG GS_VERSION=2.14.0
+ARG GS_VERSION=2.14.3
 ARG GEONODE_GS_VERSION=2.14.x
 ENV ENABLE_JSONP true
 ENV MAX_FILTER_RULES 20
